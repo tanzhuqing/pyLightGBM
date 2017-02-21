@@ -3,6 +3,7 @@
 @author: Ardalan MEHRANI <ardalan77400@gmail.com>
 @brief:
 """
+import os
 import numpy as np
 from sklearn import datasets, metrics, model_selection
 from pylightgbm.models import GBMRegressor
@@ -10,6 +11,9 @@ from pylightgbm.models import GBMRegressor
 # Parameters
 seed = 1337
 path_to_exec = "~/Documents/apps/LightGBM/lightgbm"
+os.environ['LIGHTGBM_EXEC'] = path_to_exec
+
+
 
 np.random.seed(seed) # for reproducibility
 X, y = datasets.load_diabetes(return_X_y=True)
